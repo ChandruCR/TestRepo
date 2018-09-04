@@ -1,0 +1,176 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "SpeakUp API",
+    "description": "This is API documentation for speakup API",
+    "version": "0.0.1"
+  },
+  "servers": [
+    {
+      "url": "https://test.speakup.eu/v1/",
+      "description": "Speak up test environment api"
+    },
+    {
+      "url": "https://stage.speakup.eu/v1/",
+      "description": "Speak up stage environment api"
+    },
+    {
+      "url": "https://speakup.eu/v1/",
+      "description": "Speak up production environment api"
+    }
+  ],
+  "tags": [
+    {
+      "name": "reports",
+      "description": "Everything about reports",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://speakup.eu/reports"
+      }
+    }
+  ],
+  "paths": {
+    "/reports": {
+      "get": {
+        "tags": [
+          "reports"
+        ],
+        "summary": "Returns a list of reports.",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "A JSON array of reports",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/report": {
+      "post": {
+        "tags": [
+          "reports"
+        ],
+        "summary": "Saves a new report",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "A JSON array of reports",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "reports"
+        ],
+        "summary": "updates an existing report",
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "A JSON array of reports",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/report/{reportId}": {
+      "get": {
+        "tags": [
+          "reports"
+        ],
+        "summary": "gets an existing report using report Id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "reportId",
+            "in": "path",
+            "required": true,
+            "description": "Parameter description in CommonMark or HTML.",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON array of reports",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "reports"
+        ],
+        "summary": "deletes an existing report using report Id",
+        "description": "",
+        "parameters": [
+          {
+            "name": "reportId",
+            "in": "path",
+            "required": true,
+            "description": "Parameter description in CommonMark or HTML.",
+            "schema": {
+              "type": "integer",
+              "format": "int64",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON array of reports",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
